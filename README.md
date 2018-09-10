@@ -10,6 +10,8 @@ refer to [tensorflow performance gpu vs cpu](docs/tensorflow-gpu-vs-cpu.md)
 # machine learning topics
 some hello-world examples using python
 
+refer to [tensorflow performance gpu vs cpu](docs/tensorflow-gpu-vs-cpu.md)
+
 # deep learning and tensorflow
 
 # automatic speech recognition (ASR)
