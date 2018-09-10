@@ -3,7 +3,12 @@ As I have not used dedicated graphic card previously, I have some doubts about t
 
 refer to [this link](https://medium.com/@andriylazorenko/tensorflow-performance-test-cpu-vs-gpu-79fcd39170c) for a more detailed comparison.
 
-A simple test uses my PC.
+A simple test uses my PC, and summary is listed below. In general, tensorflow gpu performs 10x than cpu
+
+|device| examples per second|
+| ------------- |:-------------:|
+|intel i7-3770 + 16GB| 600|
+|nvidia gtx 1060 6GB| 7900|
 
 ## tensorflow gpu
 7900 examples per second
@@ -55,6 +60,3 @@ Filling queue with 20000 CIFAR images before starting to train. This will take a
 2018-09-09 23:16:14.542684: step 20, loss = 4.51 (549.4 examples/sec; 0.233 sec/batch)
 2018-09-09 23:16:16.878033: step 30, loss = 4.45 (548.1 examples/sec; 0.234 sec/batch)
 ```
-
-## summary
-tensorflow gpu performs 10x than cpu
