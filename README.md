@@ -10,7 +10,7 @@ refer to [tensorflow performance gpu vs cpu](docs/tensorflow-gpu-vs-cpu.md)
 # machine learning topics
 some hello-world examples using python
 
-refer to [tensorflow performance gpu vs cpu](docs/tensorflow-gpu-vs-cpu.md)
+refer to [machine learning topics](docs/machine-learning-topics.md)
 
 # deep learning and tensorflow
 
