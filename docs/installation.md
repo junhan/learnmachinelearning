@@ -27,10 +27,10 @@ EVGA GeForce GTX 1060 is my budget choice, because:
 * has 6GB memory and the rule of thumb is to let memory vs gpu memory = 2 : 1
 * there is only one PCI-E slot in my old PC and the old PC has standard form (not the small form one), so no need to install multiple gpu
 
+# deep learning environment in ubuntu 18.04
 ## install ubuntu 18.04
 straight-forward
 
-# set up deep learning environment
 ## install cuda
 1. install proprietary nvidia driver in ubuntu 18.04
     add graphic card driver repo and install nvidia-396
@@ -169,4 +169,20 @@ straight-forward
    # deactivate the env
    source deactivate
    ```
+
+# deep learning environment in macbook pro
+
+```
+Model Name:	MacBook Pro
+Processor Name:	Intel Core i7
+Processor Speed:	2.5 GHz
+Number of Processors:	1
+Total Number of Cores:	2
+Memory:	16 GB
+Operating System: macOS high sierra
+```
+
+as there is no dedicated graphic card, install tensorflow cpu
+1. install conda
    
+2. install tensorflow cpu
