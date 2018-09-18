@@ -117,6 +117,7 @@ straight-forward
    choose anaconda over pip is because it provides packaege dependency and version management
 2. create a conda environment
    ```
+   # create env
    conda create --name machinelearning_env python=3
    # activate env
    source activate machinelearning_env
@@ -125,7 +126,6 @@ straight-forward
    ```
    conda install -c anaconda tensorflow-gpu 
    ```
-
    it will install tensorflow-gpu, tensorflow-base and its dependency
 4. Test tensorflow installation and check tensorflow can pick up the nvidia graphic card
    ```
@@ -166,6 +166,7 @@ straight-forward
    incarnation: 4248541454924357196
    physical_device_desc: "device: 0, name: GeForce GTX 1060 6GB,    pci bus id: 0000:01:00.0, compute capability: 6.1"
    ]
+
    # deactivate the env
    source deactivate
    ```
@@ -182,7 +183,35 @@ Memory:	16 GB
 Operating System: macOS high sierra
 ```
 
-as there is no dedicated graphic card, install tensorflow cpu
+as there is no dedicated graphic card in macbook, install tensorflow cpu only
 1. install conda
-   
-2. install tensorflow cpu
+   ```
+   download conda v5.2.0 for python 3.6 https://repo.anaconda.com/archive/Anaconda3-5.2.0-MacOSX-x86_64.pkg
+   install it following http://docs.anaconda.com/anaconda/install/mac-os/#macos-graphical-install
+   ```
+2. install tensorflow cpu   
+   ```
+   # create env
+   conda create --name machinelearning_env python=3
+   # activate the new env
+   source activate machinelearning_env
+   # install tensorflow cpu
+   conda install -c anaconda tensorflow
+   ```
+3. test tensorflow installation
+   ```
+   $ python
+   Python 3.6.6 |Anaconda, Inc.| (default, Jun 28 2018, 11:07:29)
+   [GCC 4.2.1 Compatible Clang 4.0.1 (tags/RELEASE_401/final)] on darwin
+   Type "help", "copyright", "credits" or "license" for more information.
+   >>> from tensorflow.python.client import device_lib
+   >>> device_lib.list_local_devices()
+   2018-09-17 22:47:16.264477: I tensorflow/core/platform/cpu_feature_guard.cc:141] Your CPU supports instructions that this TensorFlow    binary was not compiled to use: SSE4.1 SSE4.2 AVX AVX2 FMA
+   [name: "/device:CPU:0"
+   device_type: "CPU"
+   memory_limit: 268435456
+   locality {
+   }
+   incarnation: 13711008526164180218
+   ]
+   ```   
