@@ -1,7 +1,7 @@
 # development environment for deep learning
 Even as a software engineer, it still took me some time to make hardware and software work together properly. So it is necessary to document these steps and not to repeat myself again in the future. It may be helpful to others as well.
 
-A new graphic card is added to my old PC and this is the set up that is working for me. As of 09/08/2018, Nvidia GPU driver is installed without login loop. python3 is installed in virtual environment. Tensorflow can pick up the gpu just fine and can use up almost all 6GB when performing training task.
+A new graphic card is added to my old PC and this is the set up that is working for me. As of 09/08/2018, Nvidia GPU driver is installed without login loop or black screen. python3 is installed in virtual environment via conda. Tensorflow can pick up the gpu just fine and can use up almost all 6GB when performing training task.
 
 ```
 cpu: intel core i7-3770
@@ -24,8 +24,8 @@ According to this article about [how to choose a gpu for deep learning](https://
 
 EVGA GeForce GTX 1060 is my budget choice, because:
 * it supports compute capability 6.1, so that tensorflow can be installed
-* has 6GB memory and the rule of thumb is to let memory vs gpu memory = 2 : 1
-* there is only one PCI-E slot in my old PC and the old PC has standard form (not the small form one), so no need to install multiple gpu
+* it has 6GB memory and the rule of thumb is to let memory vs gpu memory = 2 : 1
+* there is only one PCI-E slot in my old PC and the old PC has standard form (not the small form one), so it cannot install multiple gpus
 
 # deep learning environment in ubuntu 18.04
 ## install ubuntu 18.04
@@ -41,11 +41,10 @@ straight-forward
     sudo apt install nvidia-396
     ```
 
-    check driver installation result
+    use ` nvidia-smi` check driver installation result
 
-    ` nvidia-smi`
-
-    ``` +------------------------------------------------------------    -----------------+
+    ```
+    +------------------------------------------------------------    -----------------+
     | NVIDIA-SMI 396.44                 Driver Version: 396.44                       |
     |-------------------------------+---------------------- +----------------------+
     | GPU  Name        Persistence-M| Bus-Id        Disp.A |    Volatile Uncorr. ECC |
@@ -80,11 +79,11 @@ straight-forward
    # this will install the latest version of cuda, (cuda-9-2 at this moment)
    ```
    
-   note, I have tried to install cuda from ubuntu repository `sudo apt remove nvidia-cuda-toolkit` and it installs successfully, but tensorflow fails to detect the gpu. It installs cuda library under `/usr/lib/cuda`, which may cause problem for other cuda libraries.
+   note, I have tried to install cuda from ubuntu repository with `sudo apt remove nvidia-cuda-toolkit`. It installs successfully, but tensorflow fails to detect the gpu. It installs cuda library under `/usr/lib/cuda`, which may cause problem for other cuda libraries.
    
    Therefore, follow the steps from official website, and installs the library in `/usr/local/cuda` and `/usr/local/cuda-9.2`. This will allow multiple cuda libraries.
 
-   Reboot the PC to make sure the driver is installed properly and will not cause login loops.
+   Reboot the PC to make sure the driver is installed properly and will not cause login loops or black screen.
 3. update `~/.bashrc` and add cuda binary executables
    ```
    # cuda
@@ -114,7 +113,7 @@ straight-forward
    install anacoda for python 3 version 5.2.0
    it will install python 3 first and then install conda, and will not affect current ubuntu's python installation
 
-   choose anaconda over pip is because it provides packaege dependency and version management
+   choose anaconda over pip is because it provides package dependency and version management. Choosing `anaconda` over `miniconda` is because `anaconda` includes all the packages by default and do not need to worry about dependencies.
 2. create a conda environment
    ```
    # create env
@@ -126,7 +125,7 @@ straight-forward
    ```
    conda install -c anaconda tensorflow-gpu 
    ```
-   it will install tensorflow-gpu, tensorflow-base and its dependency
+   it will install tensorflow-gpu, tensorflow-base and its dependency libraries.
 4. Test tensorflow installation and check tensorflow can pick up the nvidia graphic card
    ```
    # activate the env
@@ -172,6 +171,7 @@ straight-forward
    ```
 
 # deep learning environment in macbook pro
+for the sake of completeness, the steps for mac os is also listed here.
 
 ```
 Model Name:	MacBook Pro
