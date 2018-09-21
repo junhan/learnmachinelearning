@@ -3,17 +3,16 @@ As I have not used dedicated graphic card previously, I have some doubts about t
 
 refer to [this link](https://medium.com/@andriylazorenko/tensorflow-performance-test-cpu-vs-gpu-79fcd39170c) for a more detailed comparison.
 
-A simple test uses my PC and macbook, and summary is listed below. In general, tensorflow gpu performs 10x than cpu and desktop cpu > laptop cpu.
+A simple test uses my PC and macbook, and summary is listed below. In general, tensorflow gpu performs 15x than cpu and desktop cpu >> laptop cpu.
 
 |device                                | examples per second|
 | -------------                        |:-------------:|
 |intel i7-3770 + 16GB PC               | 600           |
-|nvidia gtx 1060 6GB                   | 7900          |
-|Intel Core i7 macbook 2.5GHz          |20             |
+|nvidia gtx 1060 6GB                   | 8000          |
+|Intel Core i7 macbook 2.5GHz          | 20            |
 
 ## tensorflow gpu
 7900 examples per second
-
 ```
 git clone https://github.com/tensorflow/models.git
 cd models/tutorials/image/cifar10
