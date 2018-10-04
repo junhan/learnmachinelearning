@@ -170,8 +170,8 @@ straight-forward
    source deactivate
    ```
 
-## install pytorch-gpu
-As pytorch recently release their 1.0 version, install this library as well.
+## install pytorch-gpu in ubuntu 18.04
+As pytorch recently release their 1.0 version, install this framework as well.
 
 Based on previous installation of cuda library, install pytorch via conda.
 
@@ -192,10 +192,10 @@ Memory:	16 GB
 Operating System: macOS high sierra
 ```
 
-as there is no dedicated graphic card in macbook, install tensorflow cpu only
+as there is no dedicated graphic card in macbook, install tensorflow cpu only and pytorch cpu only
 1. install conda
    ```
-   download conda v5.2.0 for python 3.6 https://repo.anaconda.com/archive/Anaconda3-5.2.0-MacOSX-x86_64.pkg
+   download conda v5.2.0 for python 3.7 https://repo.anaconda.com/archive/Anaconda3-5.2.0-MacOSX-x86_64.pkg
    install it following http://docs.anaconda.com/anaconda/install/mac-os/#macos-graphical-install
    ```
 2. install tensorflow cpu   
@@ -207,7 +207,7 @@ as there is no dedicated graphic card in macbook, install tensorflow cpu only
    # install tensorflow cpu
    conda install -c anaconda tensorflow
    ```
-3. test tensorflow installation
+3. validate tensorflow installation
    ```
    $ python
    Python 3.6.6 |Anaconda, Inc.| (default, Jun 28 2018, 11:07:29)
@@ -223,4 +223,28 @@ as there is no dedicated graphic card in macbook, install tensorflow cpu only
    }
    incarnation: 13711008526164180218
    ]
-   ```   
+   ```
+4. install pytorch
+   ```
+   # create python3.7 environment
+   # specify python=3 will keep the latest python3
+   # conda is installed for python3 in macos, so the default python3 version is v3.7.0
+   conda create --name python37  python=3
+   conda activate python37
+   conda install -c pytorch pytorch
+   ```
+   the stable version for pytorch: 0.4.1-py37_cuda0.0_cudnn0.0_1 pytorch
+5. validate pytorch installation
+   ```
+   >>> import torch
+   >>> a = torch.Tensor([[1,2],[3,4]])
+   >>> print(a)
+   ```
+
+# machine learning project development
+## install gradle and pygradle
+use gradle to organize the whole project and pygradle is used for python projects
+- gradle 4.10.2
+- pygradle 0.8.10
+
+refer to [this link](https://cs230-stanford.github.io/pytorch-getting-started.html) for python project layouts
