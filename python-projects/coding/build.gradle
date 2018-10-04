@@ -1,0 +1,44 @@
+plugins {
+    // use pygradle plugin
+    id "com.linkedin.python" version "0.8.10"
+}
+
+dependencies {
+//    python 'pypi:requests:2.9.1'
+}
+
+import org.gradle.internal.os.OperatingSystem;
+
+python {
+    // force to use a specific version for a plugin
+    //forceVersion('pypi', 'pip', '7.1.2')
+    // set the test directory to be used by py.test
+    // by default it is test directory.
+//    testDir = file('test')
+
+    // Use a specific python version if it is available in the PATH it
+    // will use it
+    // this points to the local python3 installation, and change this accordingly
+    // details.prependExecutableDirectory(new File('/opt/local/bin/python3'))
+    // or details.appendExecutableDirectory(new File('/usr/bin/python3.4'))
+    // details.pythonVersion = '3.6'
+
+    // common python path
+    // details.appendExecutableDirectory(new File('/usr/bin/python3.7'))
+
+    // check os version and set python path accordingly
+    if (OperatingSystem.current().isMacOsX()) {
+        details.appendExecutableDirectory(new File('/Users/doudou/anaconda3/envs/python37/bin/python'))
+    } else if (OperatingSystem.current().isLinux()) {
+        details.appendExecutableDirectory(new File('/home/dadoudou/anaconda3/envs/python37/bin/python'))
+    }
+
+    // linux and mac are now using latest python 3.7, must specify this version correctly
+    details.pythonVersion = '3.7'
+}
+// define an explicit installation sequence for the dependencies.
+// project.tasks.findByName('installPythonRequirements').sorted = false
+
+repositories {
+    pyGradlePyPi()
+}

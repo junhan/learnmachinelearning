@@ -2,17 +2,20 @@
 This is my note to learn machine learning.
 
 # installation
-refer to [installation](docs/installation.md)
+refer to [installation](doc/installation.md)
 
 # tensorflow performance gpu vs cpu
-refer to [tensorflow performance gpu vs cpu](docs/tensorflow-gpu-vs-cpu.md)
+refer to [tensorflow performance gpu vs cpu](doc/tensorflow-gpu-vs-cpu.md)
 
 # machine learning topics
 some hello-world examples using python
 
-refer to [machine learning topics](docs/machine-learning-topics.md)
+refer to [machine learning topics](doc/machine-learning-topics.md)
 
-# deep learning and tensorflow
+# deep learning in action
+## tensorflow
+## pytorch
+## keras
 
 # automatic speech recognition (ASR)
 Hidden markov model (HMM) was traditionally used in ASR and achieved wide acceptance. I would like to see if the recent advancement in deep learning can do a better job in ASR area, and perform some comparison with the traditional HMM approach.

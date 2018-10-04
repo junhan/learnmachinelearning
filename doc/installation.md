@@ -170,6 +170,15 @@ straight-forward
    source deactivate
    ```
 
+## install pytorch-gpu
+As pytorch recently release their 1.0 version, install this library as well.
+
+Based on previous installation of cuda library, install pytorch via conda.
+
+
+
+[tensorflow vs pytorch](https://towardsdatascience.com/pytorch-vs-tensorflow-spotting-the-difference-25c75777377b)
+
 # deep learning environment in macbook pro
 for the sake of completeness, the steps for mac os is also listed here.
 
