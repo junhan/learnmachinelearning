@@ -262,4 +262,4 @@ use gradle to organize the whole project and pygradle is used for python project
 - gradle 4.10.2
 - pygradle 0.8.10
 
-refer to [this link](https://cs230-stanford.github.io/pytorch-getting-started.html) for python project layouts
+refer to [this link](https://cs230-stanford.github.io/pytorch-getting-started.html) for python project structure layouts
