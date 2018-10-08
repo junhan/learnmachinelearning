@@ -174,8 +174,23 @@ straight-forward
 As pytorch recently release their 1.0 version, install this framework as well.
 
 Based on previous installation of cuda library, install pytorch via conda.
+```
+conda create --name python37 python=3.7
+source activate python37
+conda install -c pytorch pytorch
+# when pytorch is installed, it will detect gpu automatically and install pytorch-gpu as its dependency
+```
 
-
+validate pytorch gpu usage
+```
+$ python
+>>> import torch
+>>> torch.cuda.is_available()
+True
+>>> x = torch.cuda.FloatTensor([1.0, 2.0])
+>>> x
+tensor([1., 2.], device='cuda:0')
+```
 
 [tensorflow vs pytorch](https://towardsdatascience.com/pytorch-vs-tensorflow-spotting-the-difference-25c75777377b)
 
@@ -247,4 +262,4 @@ use gradle to organize the whole project and pygradle is used for python project
 - gradle 4.10.2
 - pygradle 0.8.10
 
-refer to [this link](https://cs230-stanford.github.io/pytorch-getting-started.html) for python project layouts
+refer to [this link](https://cs230-stanford.github.io/pytorch-getting-started.html) for python project structure layouts
