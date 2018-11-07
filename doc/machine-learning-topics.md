@@ -20,7 +20,7 @@ Linear/logistic regression
 Some topics on machine learning algorithms are discussed with python code implementation and comment. tensorflow will be used when possible. If not, other machine learning library will be used.
 
 ## Soft decision tree
-[write a soft decision tree from scatch](https://www.youtube.com/watch?v=LDRbO9a6XPU)
+[write a soft decision tree from scratch](https://www.youtube.com/watch?v=LDRbO9a6XPU)
 
 use tensorflow to develop a decision tree
 

@@ -8,3 +8,7 @@
 # intellij idea project
 .idea
 *.iml
+
+# eclipse project
+.project
+.settings

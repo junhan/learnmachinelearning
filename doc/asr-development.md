@@ -1,0 +1,1 @@
+# run mozilla's deep speech project in a PC with one GPU
