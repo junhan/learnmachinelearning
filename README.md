@@ -19,7 +19,7 @@ refer to [machine learning topics](doc/machine-learning-topics.md)
 Hidden markov model (HMM) was traditionally used in ASR and achieved wide acceptance. I would like to see if the recent advancement in deep learning can do a better job in ASR area, and perform some comparison with the traditional HMM approach.
 
 ## research papers and implementation
-[deep speech related research papers](doc/deep-speech-papers.md)
+[deep speech related research papers](doc/deep-speech-papers-and-technical-reports.md)
 
 
 ## development

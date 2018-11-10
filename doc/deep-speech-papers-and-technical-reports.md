@@ -1,5 +1,5 @@
 # deep speech by baidu research and Andrew Ng
-[baidu research homepage for deep speech](http://research.baidu.com/Blog/index-view?id=90)
+[Baidu research homepage for deep speech](http://research.baidu.com/Blog/index-view?id=90)
 
 Baidu research developed an end-to-end automatic speech recognition utilizing deep learning approaches.
 
