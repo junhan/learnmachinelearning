@@ -121,3 +121,9 @@ According to source :
 
 Change 0.21 to adjust the level of sensitivity in the sampling rates (I found 0.2-0.3 often provides best result).
 ```
+
+## use language model 
+Language model can also be considered. About how language model is used in deepspeech, refer to the blog of `A Journey to <10% Word Error Rate`.
+
+[There's an explanation of how the language model is integrated in to Deep Speech in our blog post A Journey to <10% Word Error Rate.](https://discourse.mozilla.org/t/how-language-model-is-used-in-deepspeech/22947)
+
