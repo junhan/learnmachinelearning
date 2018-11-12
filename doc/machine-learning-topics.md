@@ -28,7 +28,7 @@ use tensorflow to develop a decision tree
 ## Neural network
 
 # research papers
-see [machine learning papers](doc/machine-learning-papers.md)
+see [machine learning papers](machine-learning-papers.md)
 
 # evaluation metrics
 Different machine learning models can be used toward the same set of data and their performance can be evaluated with some metrics.
