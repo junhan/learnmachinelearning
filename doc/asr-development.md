@@ -4,7 +4,7 @@
 assume the following libraries have been installed:
 - conda
 - python 3.6
-- tensorflow 1.10 (not needed)
+- tensorflow 1.10 (not needed?)
 
 ## a PC without GPU
 - install the deepspeech package using pip
@@ -85,29 +85,37 @@ install `deepspeech-gpu` first
 pip install deepspeech-gpu
 ```
 
-use deep speech project in an offline mode
+The following steps are same as using CPU.
 
 # some caveat and workaround for deepspeech
 ## handle longer audio
-deepspeech handles small chunks of audio best, so [it cannot handle longer audio directly](https://discourse.mozilla.org/t/longer-audio-files-with-deep-speech/22784)
+mozilla deepspeech handles small chunks of audio best, and [it cannot handle longer audio directly](https://discourse.mozilla.org/t/longer-audio-files-with-deep-speech/22784)
 
-workaround: split the audio into smaller chunks using VAD (Voice activity detection) detector, and there is a python library (py-webrtcvad) for that.
+workaround: split the audio into smaller chunks using VAD (Voice activity detection) detector, and webrtcvad is a good library for VAD and it is developed by google. There is a python wrapper (py-webrtcvad) for it.
 
-This will decrease the audio length as it remove the gap between voices. It may not be appropriate for the case that needs exact alignment between text and audio. But it should be sufficient for most cases.
+This will decrease the audio length as it remove the gap between voices. It may not be appropriate for the special case that needs exact alignment between text and audio. But it should be sufficient for common scenarios.
 
 ## mozilla's deepspeech v0.2 support real time transcribing
 [Streaming RNNs in TensorFlow](https://hacks.mozilla.org/2018/09/speech-recognition-deepspeech/)
 
-instead of a bi-direction RNN, a uni-direction RNN is used
+Instead of a bi-direction RNN, a uni-direction RNN is used
 
 try this out and find out if this feature is usable in ivr scenario
 
 Some existing robodialer blocker applications performs around 70% accuracy, and use this as a baseline.
 
-## remove background noise from a voice recording
+## remove noise from a voice recording
+Noise can usually be grouped into two catagories: constant/repeatedly or sporadically. The while noise (i.e., static, or the noise does not change) can be removed by applying a noise profile to the whole audio sample. For the sporadic ones, normal Noise Reduction won't help with intermittent noise unfortunately.
+
+background noise (some other human voice, music) and static (, white noise or radio). It is not 
+
 audacity and sox provide utility to remove background noise
 
 if deepspeech cannot provide reasonable result, try to remove the background noise and test again.
+
+refer to [librivox's noise cleaning wiki](https://wiki.librivox.org/index.php/Noise_Cleaning) about how to do this with audacity.
+
+some golden rules: always run light noise removal twice than to do it aggressively once.
 
 ```
 Create noise file from silence + room's noise
@@ -122,8 +130,10 @@ According to source :
 Change 0.21 to adjust the level of sensitivity in the sampling rates (I found 0.2-0.3 often provides best result).
 ```
 
-## use language model 
-Language model can also be considered. About how language model is used in deepspeech, refer to the blog of `A Journey to <10% Word Error Rate`.
+## use a language model for better transcription result
+according to deep speech paper, language model may not help in the transcribing process and deep learning approaches can generate the text from audio directly.
+
+If the initial result is not satisfactory, consider supplying a language model. How language model is used in deepspeech, refer to the blog of `A Journey to <10% Word Error Rate`.
 
 [There's an explanation of how the language model is integrated in to Deep Speech in our blog post A Journey to <10% Word Error Rate.](https://discourse.mozilla.org/t/how-language-model-is-used-in-deepspeech/22947)
 
