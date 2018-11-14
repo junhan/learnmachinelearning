@@ -263,3 +263,14 @@ use gradle to organize the whole project and pygradle is used for python project
 - pygradle 0.8.10
 
 refer to [this link](https://cs230-stanford.github.io/pytorch-getting-started.html) for python project structure layouts
+
+## install jupyter notebook
+```
+# activate existing python environment
+pip install jupyter
+# run jupyter
+jupyter notebook
+# begin edit jupyter notebook in a web browser
+http://localhost:8888/notebooks/
+```
+
