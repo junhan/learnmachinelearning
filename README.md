@@ -5,6 +5,9 @@ This is my note to learn machine learning, automatic speech recognition.
 - set up development environment with software and hardware: refer to [installation](doc/installation.md)
 - tensorflow performance gpu vs cpu: refer to [tensorflow performance gpu vs cpu](doc/tensorflow-gpu-vs-cpu.md)
 
+# math basics
+refer to [math basics](doc/math-basics.md)
+
 # machine learning topics
 some hello-world examples using python
 
@@ -22,8 +25,8 @@ Hidden markov model (HMM) was traditionally used in ASR and achieved wide accept
 [deep speech related research papers](doc/deep-speech-papers-and-technical-reports.md)
 
 
-## development
-[development notes](doc/asr-development.md)
+## asr development
+[development notes in asr](doc/asr-development.md)
 
 # about myself
 General background, took some machine learning courses in the graduate school, understand general machine learning concepts (artificial neural network, genetic algorithm, bayesian learning, natural language processing, etc.) and have applied numeric convex analysis (mainly first-order and second-order gradient descent) and hyper parameter optimization in the ph.d research.

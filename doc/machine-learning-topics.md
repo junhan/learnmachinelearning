@@ -32,11 +32,3 @@ see [machine learning papers](machine-learning-papers.md)
 
 # evaluation metrics
 Different machine learning models can be used toward the same set of data and their performance can be evaluated with some metrics.
-
-## confusion matrix
-- condition positive (P): the number of real positive cases in the data
-- condition negative (N): the number of real negative cases in the data
-- true positive (TP): eqv. with hit
-- true negative (TN): eqv. with correct rejection
-- false positive (FP): eqv. with false alarm, Type I error
-- false negative (FN): eqv. with miss, Type II error
