@@ -87,24 +87,43 @@ pip install deepspeech-gpu
 
 The following steps are same as using CPU.
 
-# some caveat and workaround for deepspeech
-## handle longer audio
+# some caveat and workaround for deepspeech or automatic speech recognition (ASR)
+
+## general ASR
+## real world is waiting for ASR that really works
+[The real world is still waiting for automatic speech recognition that actually works](https://mc.ai/the-real-world-is-still-waiting-for-automatic-speech-recognition-that-actually-works/)
+
+Training set is often based on audio recordings of a single speaker, reading aloud written text or phone recording of two persons speak calmly. But the reality is full of background noise, multiple speakers, dialects and accents.
+
+ Mozilla and provides access to a high-performing pre-trained neural ASR model that can be used to transcribe text from the speech in audio. There are two projects deep speech and common voice.
+
+ Common voice project provides the training data for deepspeech. Deepspeech performs well on clear-spoken speech.
+
+## mozilla deepspeech
+### Comparing Mozilla DeepSpeech performance on clean and noisy speech data
+[link](https://mc.ai/comparing-mozilla-deepspeech-performance-on-clean-and-noisy-speech-data/)
+
+mozilla deepspeech is trained based on 16khz sound samples, but the phone call recordings are in 8khz sample rate. Applying it to audio data of any other sample frequency requires up-samplings that data.
+
+The conclusion is that mozilla deepspeech works well in read-loud scenarios and 
+
+### handle longer audio
 mozilla deepspeech handles small chunks of audio best, and [it cannot handle longer audio directly](https://discourse.mozilla.org/t/longer-audio-files-with-deep-speech/22784)
 
 workaround: split the audio into smaller chunks using VAD (Voice activity detection) detector, and webrtcvad is a good library for VAD and it is developed by google. There is a python wrapper (py-webrtcvad) for it.
 
 This will decrease the audio length as it remove the gap between voices. It may not be appropriate for the special case that needs exact alignment between text and audio. But it should be sufficient for common scenarios.
 
-## mozilla's deepspeech v0.2 support real time transcribing
+### mozilla's deepspeech v0.2 support real time transcribing
 [Streaming RNNs in TensorFlow](https://hacks.mozilla.org/2018/09/speech-recognition-deepspeech/)
 
-Instead of a bi-direction RNN, a uni-direction RNN is used
+Instead of a bi-direction RNN, a uni-direction RNN is used to fulfill the real-time transcribing.
 
 try this out and find out if this feature is usable in ivr scenario
 
 Some existing robodialer blocker applications performs around 70% accuracy, and use this as a baseline.
 
-## remove noise from a voice recording
+### remove noise from a voice recording
 Noise can usually be grouped into two catagories: constant/repeatedly or sporadically. The while noise (i.e., static, or the noise does not change) can be removed by applying a noise profile to the whole audio sample. For the sporadic ones, normal Noise Reduction won't help with intermittent noise unfortunately.
 
 background noise (some other human voice, music) and static (, white noise or radio). It is not 
@@ -130,7 +149,7 @@ According to source :
 Change 0.21 to adjust the level of sensitivity in the sampling rates (I found 0.2-0.3 often provides best result).
 ```
 
-## use a language model for better transcription result
+### use a language model for better transcription result
 according to deep speech paper, language model may not help in the transcribing process and deep learning approaches can generate the text from audio directly.
 
 If the initial result is not satisfactory, consider supplying a language model. How language model is used in deepspeech, refer to the blog of `A Journey to <10% Word Error Rate`.
