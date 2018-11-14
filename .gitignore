@@ -12,3 +12,6 @@
 # eclipse project
 .project
 .settings
+
+# jupyter notebook
+.ipynb*

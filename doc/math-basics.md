@@ -20,3 +20,7 @@ gaussian distribution
 $y= \beta X + \epsilon$ (1)
 
 ## logistic regression and multivariate logistic regression
+
+
+logistic regression is implemented in XGBoost.
+an example can be found in [Logistic regression and XGBoost implementation](https://www.kaggle.com/anu0508/logistic-regression-and-xgboost-implemenation/notebook)
