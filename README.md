@@ -8,6 +8,10 @@ This is my note to learn machine learning, automatic speech recognition.
 # math basics
 refer to [math basics](doc/math-basics.md)
 
+# machine learning courses
+course notes are taken in jupyter notebooks.
+- machine learning by Andrew Ng from coursera, refer to `python-projects/notebooks/coursera-machine-learning`
+
 # machine learning topics
 some hello-world examples using python
 
