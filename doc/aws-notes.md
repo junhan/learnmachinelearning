@@ -112,7 +112,7 @@ built in sagemaker algorithms
 
 ## AWS DeepLens: A New Way to Learn Machine Learning
 
-# AWS reinvent 2018 notes
+# AWS re:Invent 2018 notes
 several topics are interesting:
 - serverless architecture based on lambda
 - machine learning with sagemaker
@@ -274,3 +274,17 @@ nlp use cases and solution matrix
 | Sentiment  | X  | X  |   |   |
 
 [NLP workshop](https://github.com/aws-samples/aws-nlp-workshop)
+
+### Deep Learning Applications Using PyTorch, Featuring Facebook (AIM402-R1)
+Pytorch 1.0 is supported in sagemaker.
+
+presentation in youtube
+[AWS re:Invent 2018: Deep Learning Applications Using PyTorch, Featuring Facebook (AIM402-R1)](https://www.youtube.com/watch?v=5h1Ot2dPi2E)
+
+important links:
+- [amazon sagemaker pytorch environment](https://github.com/aws/sagemaker-python-sdk/tree/master/src/sagemaker/pytorch)
+- [amazon sagemaker dcgan code](https://github.com/danromuald/sagemaker-dcgan)
+- [fairseq](https://github.com/pytorch/fairseq)：a Sequence-to-Sequence Toolkit from facebook ai research
+- [FAIRSeq on amazon sagemaker](https://github.com/danromuald/sagemaker-fairseq)
+
+pytorch has a distributed learning feature
