@@ -29,7 +29,7 @@ and read out with the specified language using polly
 amazon comprehend
 - discover insights and relationships in text using deep learning
 - topic modeling
-- entities
+- named entities
 - key phrases
 - sentiment: negative, neutral, positive, mixed
 
