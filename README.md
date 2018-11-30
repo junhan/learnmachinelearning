@@ -1,5 +1,5 @@
 # learn machine learning
-This is my note to learn machine learning, automatic speech recognition.
+This is my note to learn machine learning, automatic speech recognition and natural language processing.
 
 # installation
 - set up development environment with software and hardware: refer to [installation](doc/installation.md)
@@ -31,6 +31,9 @@ Hidden markov model (HMM) was traditionally used in ASR and achieved wide accept
 
 ## asr development
 [development notes in asr](doc/asr-development.md)
+
+# natural language processing and natural language understanding
+[natural language processing](doc/natural-language-processing-courses.md)
 
 # about myself
 General background, took some machine learning courses in the graduate school, understand general machine learning concepts (artificial neural network, genetic algorithm, bayesian learning, natural language processing, etc.) and have applied numeric convex analysis (mainly first-order and second-order gradient descent) and hyper parameter optimization in the ph.d research.

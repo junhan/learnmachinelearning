@@ -1,11 +1,12 @@
 # tensorflow and other python libraries
 The current machine learning area can be divided into two groups: deep learning (CNN, RNN, fully connected nets, linear models) vs other traditional machine learning algorithms (support vector machine, random forrest, KNN, naive bayes). 
 
-The common python libraries are listed below:
+The common machine learning libraries are listed below:
 - `tensorflow` is focused on the deep learning area
 - `scikit-learn` can be used for the traditional algorithms, or `sklearn`
 - `pandas` provides DataFrame and is optimized for data manipulation and analysis
 - `pytorch` machine learning library and is used for natural language processing
+- `mxnet` for natural language processing (NLP), e.g., named entity recognition and key phrase extraction
 
 Meanwhile, tensorflow supports the following traditional machine learning algorithms, according to [TensorFlow - Not Just for Deep Learning](https://terrytangyuan.github.io/2016/08/06/tensorflow-not-just-deep-learning/)
 ```
