@@ -49,3 +49,6 @@ Answered Nov 3, 2016 · Author has 233 answers and 2.4m answer views
 ```
 In principle, yes, but usually an optimization algorithm that uses the n-dimensional gradient will perform much better than an optimization algorithm that uses only the 1-dimensional cost function value.
 ```
+
+## fast.ai
+[fast.ai](https://www.fast.ai/), this is free online courses for coders
