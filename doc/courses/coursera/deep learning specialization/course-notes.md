@@ -108,11 +108,63 @@ norm or distance
 # Improving Deep Neural Networks Hyperparameter tuning Regularization and Optimization
 ## bias and variance
 - bias: The bias is an error from erroneous assumptions in the learning algorithm. High bias can cause an algorithm to miss the relevant relations between features and target outputs (under-fitting).
-- variance: The variance is an error from sensitivity to small fluctuations in the training set. High variance can cause an algorithm to model the random noise in the training data, rather than the intended outputs (overfitting).
-- high bias: under-fitting, cannot do well in the training set
-- high variance: over-fitting, cannot generalize over training set and will not do well in the dev set or test set
+- variance: The variance is an error from sensitivity to small fluctuations in the training set. High variance can cause an algorithm to model the random noise in the training data, rather than the intended outputs (over-fitting).
+- high bias
+  - under-fitting, cannot fit well the training set.
+  - try to solve the high bias first with an acceptable error rate
+  - base error (bayes error) rate
+  - how to solve it?
+    - use bigger network
+    - more complex neural network structures
+    - train longer
+- high variance
+  - over-fitting, cannot generalize over training set and will not do well in the dev set or test set
+  - how to solve high variance?
+    - get more data
+    - regularization
+    - more complex neural network structures
+- bias variance trade-off
+  - these two goals are conflicted with each other often
+  - but for neural network, it can achieve both low bias and low variance
+  - the reason that neural network gains popularity
 
+## regularization
+regularization may increase bias a little, but can reduce high variance or over-fitting problem
 
+L2 regularization: it uses L2-norm or Euclidean norm
+$\frac{\Lambda}{2m}||W||^2_2=\frac{\Lambda}{2m}\Sigma{W_i^2}=\frac{\Lambda}{2m}W^TW$
+
+L1 regularization: 
+$\frac{\Lambda}{2m}\Sigma{W_i} = \frac{\Lambda}{2m}||W||_1$
+
+$\lambda$ is the regularization parameter, i.e., another hyperparameter to consider for optimization purpose
+
+## dropout regularization
+dropout is another popular form of regularization and it is mainly used in neural network.
+
+use it in the training set, ignore the dropout in the dev/test set
+
+inverted dropout implementation
+
+the intuition behind why dropout works is because by dropping out certain neurons randomly reduces the dependency to certain features. For example, in a face recognition problem, the classifier should not rely too much on certain features, e.g., if mouse is covered, the overall classifier (eye, ears, head) should work.
+
+## other regularization technique
+data augmentation, generating more fake training set by tweaking the input. e.g., flipping upside down, distortion
+
+early stopping of gradient descent optimization
+
+## set up optimization problem
+normalization and standardization
+
+normalize training set
+- the mean $\mu = \frac{1}{m}\Sigma{x}$
+- the normal variance standard deviation $\sigma=\frac{1}{m}\Sigma{(x - \mu)}^2$
+
+vanishing/exploding gradients 
+
+numerical approximation of gradients
+
+$df/d\theta = \frac{f(\theta + \epsilon) - f(\theta - \epsilon)}{2\epsilon}$
 
 # reference
 this git repo contains the questions and answers listed in the specialization courses. [see reference](https://github.com/Kulbear/deep-learning-coursera)
