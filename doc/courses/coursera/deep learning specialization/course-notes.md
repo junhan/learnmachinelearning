@@ -1,4 +1,5 @@
-# Introduction to deep learning 
+# Neural Networks and Deep Learning
+## Introduction to deep learning 
 artificial neural network (ANN)
 
 | type  | description  |
@@ -13,11 +14,11 @@ structured data (stat, gpd data, price) vs unstructured data (image, audio, text
 
 supervised learning vs unsupervised learning
 
-# Neural Networks Basics
+## Neural Networks Basics
 goals
 - logistic regression model, structured as a shallow neural network
 
-## Logistic Regression as a Neural Network
+### Logistic Regression as a Neural Network
 logistic regression is for binary classification
 
 classify whether an image is a cat (1) or not (0)
@@ -102,6 +103,16 @@ $$
 norm or distance
 - L1-norm, Manhattan distance $||x||_1=\Sigma{|x|}$
 - L2-norm, Euclidean norm, Euclidean distance $||x||_2=\sqrt{\Sigma{x^2}}$
+
+
+# Improving Deep Neural Networks Hyperparameter tuning Regularization and Optimization
+## bias and variance
+- bias: The bias is an error from erroneous assumptions in the learning algorithm. High bias can cause an algorithm to miss the relevant relations between features and target outputs (under-fitting).
+- variance: The variance is an error from sensitivity to small fluctuations in the training set. High variance can cause an algorithm to model the random noise in the training data, rather than the intended outputs (overfitting).
+- high bias: under-fitting, cannot do well in the training set
+- high variance: over-fitting, cannot generalize over training set and will not do well in the dev set or test set
+
+
 
 # reference
 this git repo contains the questions and answers listed in the specialization courses. [see reference](https://github.com/Kulbear/deep-learning-coursera)
