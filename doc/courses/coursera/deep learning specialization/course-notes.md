@@ -166,5 +166,26 @@ numerical approximation of gradients
 
 $df/d\theta = \frac{f(\theta + \epsilon) - f(\theta - \epsilon)}{2\epsilon}$
 
+## optimization algorithms
+- mini-batch gradient descent
+  - 1 epoch: 1 single pass of 1 step of mini-batch gradient descent through training set
+  - if mini-batch size = m (the whole training set size), it is batch gradient descent
+  - if mini-batch size = 1, it is stochastic gradient descent
+- stochastic gradient descent
+  - use 1 training sample at one iteration
+- bias correction
+- momentum
+  - gradient descent with momentum
+  - Momentum takes into account the past gradients to smooth out the update and reduce the oscillations
+  - compute $dw$, $db$ on mini-batch, then $v_{dw}=\beta * v_{dw} + (1 - \beta) * v_{dw}$
+  - smooth out the gradient
+  - instead of following gradient direction, the update on $w$ and $b$ are calculated based on momentum
+- RMSProp: root mean square property
+- Adam optimization: combine
+  - Adam is one of the most effective optimization algorithms for training neural networks. It combines ideas from RMSProp (described in lecture) and Momentum.
+  - It calculates an exponentially weighted average of past gradients, and stores it in variables  v  (before bias correction) and  $v^{corrected}$ c(with bias correction).
+  - It calculates an exponentially weighted average of the squares of the past gradients, and stores it in variables  s  (before bias correction) and  $s^{corrected}$  (with bias correction).
+  - It updates parameters in a direction based on combining information from "1" and "2".
+
 # reference
 this git repo contains the questions and answers listed in the specialization courses. [see reference](https://github.com/Kulbear/deep-learning-coursera)
