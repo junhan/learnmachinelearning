@@ -187,5 +187,17 @@ $df/d\theta = \frac{f(\theta + \epsilon) - f(\theta - \epsilon)}{2\epsilon}$
   - It calculates an exponentially weighted average of the squares of the past gradients, and stores it in variables  s  (before bias correction) and  $s^{corrected}$  (with bias correction).
   - It updates parameters in a direction based on combining information from "1" and "2".
 
+## hyperparameter algorithms
+- batch normalization
+  - normalization can speed up learning
+  - normalize $z^{(i)}$
+- batch normalization
+  - make sure that the input to the neural network will not change too much
+- multi-class classification
+  - not binary classification
+  - softmax layer
+  - softmax activation function, take n input and produce a vector of n output
+  - loss function
+
 # reference
 this git repo contains the questions and answers listed in the specialization courses. [see reference](https://github.com/Kulbear/deep-learning-coursera)
