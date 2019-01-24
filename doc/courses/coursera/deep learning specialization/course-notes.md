@@ -261,5 +261,20 @@ reduce variance:
   - l2, dropout, data augmentation
 - NN architecture/hyperparameter search
 
+Build the first system quickly and then iterate:
+- set up dev/test set and metric
+- build initial system quickly
+- use bias/variance analysis and error analysis to prioritize next steps
+
+bias/variance on mismatched training and dev/test sets:
+- avoidable bias between human level and training set error.
+- variance between training set and training-dev set
+- data mismatch between training-dev set and dev set
+- degree of over-fitting to the dev set between dev and test set
+
+Transfer Learning vs Multitask Learning：
+- Multitask Learning: for several similar tasks, optimizing one task may help another, so optimize them at the same time
+- transfer learning: transfer one pre-trained network to another task
+
 # reference
 this git repo contains the questions and answers listed in the specialization courses. [see reference](https://github.com/Kulbear/deep-learning-coursera)
