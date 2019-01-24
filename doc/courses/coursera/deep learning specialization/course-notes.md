@@ -101,9 +101,12 @@ $$
 $$
 
 norm or distance
-- L1-norm, Manhattan distance $||x||_1=\Sigma{|x|}$
-- L2-norm, Euclidean norm, Euclidean distance $||x||_2=\sqrt{\Sigma{x^2}}$
+- L1-norm, Manhattan distance, $||x||_1=\Sigma{|x|}$
+- L2-norm, Euclidean norm, Euclidean distance, $||x||_2=\sqrt{\Sigma{x^2}}$
 
+L1-norm, L2-norm as as loss function
+- L1-norm loss function, least absolute deviations (LAD), least absolute errors (LAE)
+- L2-norm loss function, least square error
 
 # Improving Deep Neural Networks Hyperparameter tuning Regularization and Optimization
 ## bias and variance
@@ -129,12 +132,11 @@ norm or distance
   - the reason that neural network gains popularity
 
 ## regularization
-regularization may increase bias a little, but can reduce high variance or over-fitting problem
+regularization may increase bias a little, but can reduce high variance or over-fitting problem. It prevents the coefficients to fit so perfectly that the model leads to over-fitting.
 
-L2 regularization: it uses L2-norm or Euclidean norm
+- L2 regularization: sum of square of the weights.
 $\frac{\Lambda}{2m}||W||^2_2=\frac{\Lambda}{2m}\Sigma{W_i^2}=\frac{\Lambda}{2m}W^TW$
-
-L1 regularization: 
+- L1 regularization: sum of weights
 $\frac{\Lambda}{2m}\Sigma{W_i} = \frac{\Lambda}{2m}||W||_1$
 
 $\lambda$ is the regularization parameter, i.e., another hyperparameter to consider for optimization purpose
@@ -198,6 +200,66 @@ $df/d\theta = \frac{f(\theta + \epsilon) - f(\theta - \epsilon)}{2\epsilon}$
   - softmax layer
   - softmax activation function, take n input and produce a vector of n output
   - loss function
+
+# Structuring Machine Learning Projects
+## ideas of machine learning strategy
+ideas:
+- collect more data
+- collect more diverse training set
+- train algorithm longer with gradient descent
+- try Adam instead of gradient descent
+- try bigger network
+- try smaller network
+- try dropout
+- add $L_2$ regularization
+- change network architecture
+  - activation function
+  - ...
+
+evaluation matrix
+- precision:  positive predictive value, fraction of relevant instances among the retrieved instances
+- recall: sensitivity, the fraction of relevant instances that have been retrieved over the total amount of relevant instances
+- F-1 score: a combination of precision and recall
+
+Satisficing and optimizing metric
+
+why compare to human-level performance:
+- get labeled data from humans
+- gain insight from manual error analysis
+- better analysis of bias/variance
+
+problems that ML does better than human:
+- online advertising
+- product recommendation
+- logistics (predicting transit time)
+- loan approvals
+
+These are structured data and not natural perception (vision, hearing):
+- speech recognition
+- image recognition
+- medical
+
+two fundamental assumptions of supervised learning:
+- fit training set pretty well (bias)
+- the training set performance generalizes pretty well to teh dev/test set (variance)
+
+reducing (avoidable) bias and variance
+- human-level
+- training error
+- dev error
+
+reduce avoidable bias
+- train bigger model
+- train longer/better optimization algorithms
+  - momentum, RMSprop, Adam
+- NN architecture/hyperparameter search
+  - RNN, CNN
+
+reduce variance:
+- more data
+- regularization
+  - l2, dropout, data augmentation
+- NN architecture/hyperparameter search
 
 # reference
 this git repo contains the questions and answers listed in the specialization courses. [see reference](https://github.com/Kulbear/deep-learning-coursera)
