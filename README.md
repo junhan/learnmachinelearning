@@ -10,7 +10,7 @@ refer to [math basics](doc/math-basics.md)
 
 # machine learning courses notes
 ## deep learning specialization in coursera
-[refer to course note](doc/courses/coursera/deep learning specialization/deep-learning-specialization-course-notes.md)
+[refer to course note](doc/courses/coursera/deep%20learning%20specialization/deep-learning-specialization-course-notes.md)
 
 ## machine learning in coursera
 course notes are taken in jupyter notebooks.
