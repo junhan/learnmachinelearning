@@ -1,14 +1,17 @@
-# learn machine learning
-This is my note to learn machine learning, automatic speech recognition and natural language processing.
+# introduction
+This is my work-in-progress note in the machine learning area, automatic speech recognition and natural language processing.
 
-# installation
+# environment setup and installation
 - set up development environment with software and hardware: refer to [installation](doc/installation.md)
 - tensorflow performance gpu vs cpu: refer to [tensorflow performance gpu vs cpu](doc/tensorflow-gpu-vs-cpu.md)
 
 # math basics
 refer to [math basics](doc/math-basics.md)
 
-# machine learning courses
+# machine learning courses notes
+## deep learning specialization in coursera
+
+## machine learning in coursera
 course notes are taken in jupyter notebooks.
 - machine learning by Andrew Ng from coursera, refer to `python-projects/notebooks/coursera-machine-learning`
 
@@ -38,4 +41,4 @@ Hidden markov model (HMM) was traditionally used in ASR and achieved wide accept
 # about myself
 General background, took some machine learning courses in the graduate school, understand general machine learning concepts (artificial neural network, genetic algorithm, bayesian learning, natural language processing, etc.) and have applied numeric convex analysis (mainly first-order and second-order gradient descent) and hyper parameter optimization in the ph.d research.
 
-Recently, I would like to take on the latest advancement in deep learning (neural network) and big data, and see if these two can lead to some proof-of-concept prototype in automatic speech recognition (ASR).
+Recently, I would like to take on the latest advancement in deep learning (neural network) and big data, and see if these two can lead to some proof-of-concept prototype in automatic speech recognition (ASR) and natural language processing (NLP).

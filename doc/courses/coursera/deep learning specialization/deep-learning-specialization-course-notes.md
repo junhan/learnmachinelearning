@@ -276,5 +276,86 @@ Transfer Learning vs Multitask Learning：
 - Multitask Learning: for several similar tasks, optimizing one task may help another, so optimize them at the same time
 - transfer learning: transfer one pre-trained network to another task
 
+# Convolutional Neural Networks
+## edge detection
+- vertical edge detection
+  - $$
+\left(\begin{array}{cc} 
+1 & 0 & -1\\ 
+1 & 0 & -1\\
+1 & 0 & -1\\
+\end{array}\right)
+$$ 
+  - python convolution operator
+  - tensorflow conv2d
+- horizontal edge detection
+  - $$
+\left(\begin{array}{cc} 
+1 & 1 & 1\\ 
+0 & 0 & 0\\
+-1 & -1 & -1\\
+\end{array}\right)
+$$
+
+the basic convolution operation (*) is the key for backward propagation to learn
+- it shrinks the image output
+- throw away a lot of information from the edges/corners
+
+to address these two issues, pad the image with one layer of 0, e.g., the original image is 6 x 6, pad the image to become 8 x 8, so that the convoluted image preserves the original size 6 x 6. the padding (p) is one hyperparameter of convolutional network.
+
+valid and same convolutions, original image and filter (f x f)
+- **valid**: no padding is used, perform the normal convolution operation
+  $(n \times n) * (f \times f) -> (n - f + 1 * n - f + 1)$
+- **same**: pad (p) so that output image size is the same as the input size
+  $n + 2 \times p - f + 1 = n  \implies p = \frac{f-1}{2}$
+
+strided convolutions operation
+stride = 2, move left and move down the original image with the size of provided stride size instead of default 1
+
+basic convolutions elements with strided convolutions:
+- (n x n) image
+- (f x f) filter
+- padding p
+- stride s
+- output image size: using floor operation $\lfloor \frac{n + 2p - f}{s} + 1 \rfloor \times \lfloor \frac{n + 2p - f}{s} + 1 \rfloor$
+
+convolutions on RGB image
+- use a filter 3x3x3 (height x width x channel) to perform convolution operation against the original 6x6x3 image and get 4x4 result
+- multiple filters will produce 4x4x$n_c^\prime$, i.e., the outputs can be stacked, where $n_c^\prime$ is the number of filters.
+- source $n \times n \times n_c * f \times f \times n_c \implies n - f + 1 \times n - f + 1 \times n_c^\prime$, where $n_c^\prime$ is the number of filters, assume s = 1 and p = 0
+
+in one convolution layer, 10 filters with 5x5 RGB image, the total parameter is $(5 \times 5 \times 3 + 1) * 10 = 7600$, where parameter is weight in the filter plus one bias parameter. The parameter size in the convolution layer will not be affected by the input image.
+
+notation for layer l as a convolution layer
+- $f^{[l]}$ = filter size or dimension, e.g., 3x3
+- $p^{[l]}$ = the amount of padding (valid padding p = 0 or same)
+- $s^{[l]}$ = stride
+- $n_c^{[l]}$ = number of filters, also number of **output** channels
+- each filter is $f^{[l]} \times f^{[l]} \times n_c^{[l-1]}$
+- activations: $a^{l} -> n_H^{[l]} \times n_W^{[l]} \times n_c^{[l]}$
+  - with vectorization: $A^{l} = m \times n_H^{[l]} \times n_W^{l]}[ \times n_c^{[l]}$
+- Weights: weight parameters in all the filter, $f^{[l]} \times f^{[l]} \times n_c^{[l-1]} \times n_c^{[l]}$
+- bias: $n_c^{[l]} - (1,1,1,n_c^{[l]} )$
+- input: $n_H^{[l-1]} \times n_W^{[l-1]} \times n_c^{[l-1]}$
+- output: $n_H^{[l]} \times n_W^{[l]} \times n_c^{[l]}$
+
+typical types of layer in a convolutional network:
+- convolution layer (conv)
+- pooling layer (pool)
+- fully connected layer (fc)
+  
+pooling layer: max pooling and average pooling
+- extract the max of a 2x2 region from a filter
+- it keeps the same amount of channels
+- stride controls the steps to jump
+
+hyperparameters in pooling layer:
+- f: filter size
+- s: stride
+- max or average pooling
+- the rule to calculate the dimension in pooling layer is the same as the convolution layer
+- no parameters to learn! nothing for gradient descent to learn
+- pooling is done independently in each channel, so the number of output channel is the same as input
+
 # reference
 this git repo contains the questions and answers listed in the specialization courses. [see reference](https://github.com/Kulbear/deep-learning-coursera)
