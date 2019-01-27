@@ -358,4 +358,6 @@ hyperparameters in pooling layer:
 - pooling is done independently in each channel, so the number of output channel is the same as input
 
 # reference
-this git repo contains the questions and answers listed in the specialization courses. [see reference](https://github.com/Kulbear/deep-learning-coursera)
+the following git repos contain the questions and answers listed in the specialization courses.
+- [see reference](https://github.com/Kulbear/deep-learning-coursera)
+- [another git repo](https://github.com/rvarun7777/Deep_Learning)
